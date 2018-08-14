@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*utility class, hides elements*/
+.hidden
+{
+	display: none;
+}
+
+/*
+body {
+	 background-image:url(../images/bg.png);
+	
+}
+*/
+
+#starship {
+	position: relative;
+/*	z-index: 2;*/
+}
+
+#background {
+	position: absolute;
+/*	z-index: 1;*/
+}

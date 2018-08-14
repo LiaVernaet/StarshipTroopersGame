@@ -1,0 +1,16 @@
+
+
+flying game - in starship trying to avoid meteors and insects (flappy bird kind of thing?)
+
+-Score increases the longer you survive
+
+-Three lives. Lose one whenever obstacle is hit. If all lives are lost, required to start over. Displays score.
+
+-sound effects
+
+-Uses mouse to navigate (follows the mouse) dodge obstacles
+keys
+
+-Can use a key or click to shoot obstacles
+
+-meteors, bugs are obstacles
