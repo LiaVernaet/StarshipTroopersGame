@@ -6,20 +6,25 @@
 //VARIABLES
 var	scrollingBackground = document.getElementById("#background");
 var	asteroid = document.getElementById("#asteroid");
+var startButton = document.getElementById("#startButton");
 var score;
+var myGamePiece;
 
-
-	var starship= null;
-	function init(){
-		var	starship = document.getElementById("#starship");			
-		starship.style.position='relative';
-		starship.style.left='0px';
-	    starship.style.top='500px';
-		score = new component("30px", "Consolas", "black", 280, 40, "text");
-	}
 
 myScore.text="SCORE: " + myGameArea.frameNo;
     myScore.update();
+
+
+function startGame() {
+	startButton.style.display = 'none';
+    myGameArea.start();
+	myGamePiece = new component(30, 30, "../images/starship.gif", 10, 120, "image");		
+//		starship.style.position='relative';
+//		starship.style.left='0px';
+//	    starship.style.top='500px';
+//		score = new component("30px", "Consolas", "black", 280, 40, "text");
+}
+
 
 	function moveShip(e){				
 		var key_code=e.which||e.keyCode;
@@ -62,14 +67,10 @@ function moveBackground() {
 	
 }
 
-function shoot(){
-	
-}
-
 
 
 
 
 //EVENT LISTENERS
 starship.addEventListener('keypress', moveShip);
-asteroid.addEventListener('click', shoot);
+startButton.addEventListener('click', startGame);
