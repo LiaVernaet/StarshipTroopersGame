@@ -15,15 +15,15 @@ myScore.text="SCORE: " + myGameArea.frameNo;
     myScore.update();
 
 
-function startGame() {
-	startButton.style.display = 'none';
-    myGameArea.start();
-	myGamePiece = new component(30, 30, "../images/starship.gif", 10, 120, "image");		
-//		starship.style.position='relative';
-//		starship.style.left='0px';
-//	    starship.style.top='500px';
-//		score = new component("30px", "Consolas", "black", 280, 40, "text");
-}
+//function startGame() {
+//	startButton.style.display = 'none';
+//    myGameArea.start();
+//	myGamePiece = new component(30, 30, "../images/starship.gif", 10, 120, "image");		
+////		starship.style.position='relative';
+////		starship.style.left='0px';
+////	    starship.style.top='500px';
+////		score = new component("30px", "Consolas", "black", 280, 40, "text");
+//}
 
 
 	function moveShip(e){				
@@ -50,9 +50,7 @@ function startGame() {
 
 
 //FUNCTIONS
-function moveBackground() {
-	
-}
+
 
 
 //function moveShip() {

@@ -20,13 +20,90 @@
 
 -->
 <div id="container">
-<body onload="startGame()">
+<!--<body onload="startGame()">-->
+<img src="images/gameheader.png" alt="logo" id="gameHeader">
 <a id="startButton">START</a>
-<canvas id="myCanvas" width="800" height="500"
+<h2 id="myScore">SCORE:</h2>
+<canvas id="bg" width="800" height="500"
 style="border:3px solid #000000; margin-left: 300px; margin-top: 50px;">
-
-
 </canvas>
+
+<script>(function() {
+        window.requestAnimationFrame = window.requestAnimationFrame
+                || window.webkitRequestAnimationFrame
+                || window.mozRequestAnimationFrame
+                || function(callback) { window.setTimeout(callback, 1000 / 60); };
+
+        var canvas = document.getElementById('bg');
+        var context = canvas.getContext('2d');
+        var looping = false;
+        var totalSeconds = 0;
+		myScore.style.display = 'none';
+		gameHeader.style.display = 'block';
+
+        var img = new Image();
+        img.onload = imageLoaded;
+        img.src = 'images/gamebg.png';
+
+        function imageLoaded() {
+            draw(0);
+
+            var btn = document.getElementById('startButton');
+            btn.addEventListener('click', function() {
+                startGame();
+//				var score;
+				myScore.style.display = 'block';
+				gameHeader.style.display = 'none';
+	myScore.text="SCORE: " + canvas.frameNo;
+    myScore.update();
+				
+            });
+        }
+
+        var lastFrameTime = 0;
+
+        function startGame() {
+            looping = !looping;
+			startButton.style.display = 'none';
+			
+//			var starship = new Image();
+//            img.src = 'images/starship.gif';
+
+            if (looping) {
+                lastFrameTime = Date.now();
+                requestAnimationFrame(loop);
+            }
+        }
+
+        function loop() {
+            if (!looping) {
+                return;
+            }
+
+            requestAnimationFrame(loop);
+
+            var now = Date.now();
+            var deltaSeconds = (now - lastFrameTime) / 1000;
+            lastFrameTime = now;
+            draw(deltaSeconds);
+        }
+
+        function draw(delta) {
+            totalSeconds += delta;
+
+            var vx = 100; // the background scrolls with a speed of 100 pixels/sec
+            var numImages = Math.ceil(canvas.width / img.width) + 1;
+            var xpos = totalSeconds * vx % img.width;
+
+            context.save();
+            context.translate(-xpos, 0);
+            for (var i = 0; i < numImages; i++) {
+                context.drawImage(img, i * img.width, 0);
+            }
+            context.restore();
+        }
+    }());</script></body>
+
 	</div>
 
 <!--<img src="images/starship.gif" alt="starship" id="starship">-->
