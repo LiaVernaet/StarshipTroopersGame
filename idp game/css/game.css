@@ -1,0 +1,49 @@
+#canvas {
+	background-image: url(../images/background.jpg);
+	position: relative;
+}
+
+#gameHeader {
+	transform: scale(0.7);
+	position: absolute;
+	left: 6%;
+	top: 3%;
+}
+body {
+	 background-color: #112872;
+}
+
+.panel {
+	position: absolute;
+	top: 20px;
+	left: 30px;
+	font-weight: bold;
+	font-size: 40px;
+	color:cornflowerblue;
+}
+
+#start {
+	position: absolute;
+	top:300px;
+	left: 200px;
+	border-radius: 18px;
+	background-color: gray;
+	color: yellow;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 30px;
+}
+
+#start:hover {
+	border: 2px solid red;
+}
+
+.title1 {
+	position: absolute;
+	top: 220px;
+	left: 70px;
+	color: white;
+	font-size: 1.5em;
+}
