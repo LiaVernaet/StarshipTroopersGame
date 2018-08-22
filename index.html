@@ -1,122 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Starship Troopers Game</title>
-<link href="css/reset.css" rel="stylesheet" type="text/css"> <!--reset always before main CSS-->
-<link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
 
-</head>
-	<!-- build-->
-<!-- 
-
--score variable that increases as time passes.
-
--starship that moves with arrows
-
--obstacles that move along with the background
-
--scrolling background animate in css
-
--->
-<div id="container">
-<!--<body onload="startGame()">-->
-<img src="images/gameheader.png" alt="logo" id="gameHeader">
-<a id="startButton">START</a>
-<h2 id="myScore">SCORE:</h2>
-<canvas id="bg" width="800" height="500"
-style="border:3px solid #000000; margin-left: 300px; margin-top: 50px;">
-</canvas>
-
-<script>(function() {
-        window.requestAnimationFrame = window.requestAnimationFrame
-                || window.webkitRequestAnimationFrame
-                || window.mozRequestAnimationFrame
-                || function(callback) { window.setTimeout(callback, 1000 / 60); };
-
-        var canvas = document.getElementById('bg');
-        var context = canvas.getContext('2d');
-        var looping = false;
-        var totalSeconds = 0;
-		myScore.style.display = 'none';
-		gameHeader.style.display = 'block';
-
-        var img = new Image();
-        img.onload = imageLoaded;
-        img.src = 'images/gamebg.png';
-
-        function imageLoaded() {
-            draw(0);
-
-            var btn = document.getElementById('startButton');
-            btn.addEventListener('click', function() {
-                startGame();
-//				var score;
-				myScore.style.display = 'block';
-				gameHeader.style.display = 'none';
-	myScore.text="SCORE: " + canvas.frameNo;
-    myScore.update();
-				
-            });
-        }
-
-        var lastFrameTime = 0;
-
-        function startGame() {
-            looping = !looping;
-			startButton.style.display = 'none';
-			
-//			var starship = new Image();
-//            img.src = 'images/starship.gif';
-
-            if (looping) {
-                lastFrameTime = Date.now();
-                requestAnimationFrame(loop);
-            }
-        }
-
-        function loop() {
-            if (!looping) {
-                return;
-            }
-
-            requestAnimationFrame(loop);
-
-            var now = Date.now();
-            var deltaSeconds = (now - lastFrameTime) / 1000;
-            lastFrameTime = now;
-            draw(deltaSeconds);
-        }
-
-        function draw(delta) {
-            totalSeconds += delta;
-
-            var vx = 100; // the background scrolls with a speed of 100 pixels/sec
-            var numImages = Math.ceil(canvas.width / img.width) + 1;
-            var xpos = totalSeconds * vx % img.width;
-
-            context.save();
-            context.translate(-xpos, 0);
-            for (var i = 0; i < numImages; i++) {
-                context.drawImage(img, i * img.width, 0);
-            }
-            context.restore();
-        }
-    }());</script></body>
-
-	</div>
-
-<!--<img src="images/starship.gif" alt="starship" id="starship">-->
-<!--<img src="images/asteroid.png" alt="asteroid" id="asteroid">-->
-
-	
-	
-	
-	
-	
-	
-	
-<script src="js/main.js"></script>
-<h1 class="hidden">Starship Troopers</h1>
-</body>
-</html>
+    <head>
+    <meta charset="utf-8" />
+    <title>Starship Troopers Game</title>
+    <link rel="stylesheet" href="css/game.css">
+    </head>
+    <div id="container">
+    <body style="" data-mce-style="color: #0000ff;">
+    
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <img src="images/gameheader.png" alt="logo" id="gameHeader">
+    <div class="panel"><span id="score">0</span></div>
+    <a id="start">START</a>
+    <div class="title1"><span id="rules"><pre>Shoot as many bugs as you can
+    before they reach you!</pre></span></div>
+     <script type="text/javascript" src="js/game.js"></script>
+    </body></div>
+    
+    </html>

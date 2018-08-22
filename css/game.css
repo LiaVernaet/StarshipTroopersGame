@@ -1,0 +1,62 @@
+#canvas {
+	background-image: url(../images/gamebg.png);
+	position: relative;
+	border: solid 5px black;
+/*	z-index: 2;*/
+	
+}
+
+#container {
+	position: relative;
+	margin-left: 500px;
+	margin-top: 30px;
+}
+
+#gameHeader {
+	transform: scale(0.9);
+	position: absolute;
+	left: 110px;
+	top: 10px;
+}
+body {
+	 background-color: #112872;
+}
+
+.panel {
+	position: absolute;
+	top: 15px;
+	left: 13px;
+	font-weight: bold;
+	font-size: 20px;
+	color:cornflowerblue;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#start {
+	border-radius: 18px;
+	margin-left: -320px;
+	margin-top: 300px;
+	position: absolute;
+    background-color: gray;
+    color: yellow;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+}
+
+#start:hover {
+	border: 2px solid red;
+}
+
+.title1 {
+	position: absolute;
+	top: 220px;
+	left: 130px;
+	color: white;
+	font-size: 1.2em;
+}
+
+
